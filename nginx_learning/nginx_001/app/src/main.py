@@ -12,13 +12,9 @@ IPAddr=socket.gethostbyname(hostname)
 @app.route('/',methods=['GET'])
 def index_page():
     if IPAddr != None :
-        return {"hostname": hostname,
-                "host_ip": IPAddr,
-                "status": "UP"}
+        return {"status": "UP"}
     else:
-        return {"hostname": hostname,
-                "host_ip": IPAddr,
-                "status": "DOWN"}
+        return {"status": "DOWN"}
 
 health.add_check(index_page)
 
