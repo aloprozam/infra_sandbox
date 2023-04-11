@@ -3,16 +3,26 @@ version: '3'
 services:
   app1:
     container_name: app1
-    build: ./app
-    image: python_app_aloprozam:latest
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: sandbox
+      labels:
+        - "com.example.description=app1"
+        - "com.example.department=aloprozam sandbox k9s-node-01"
     restart: unless-stopped
     networks:
       front-tier:
         ipv4_address: ${APP1IP}
   app2:
     container_name: app2
-    build: ./app
-    image: python_app_aloprozam:latest
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+      target: sandbox
+      labels:
+        - "com.example.description=app2"
+        - "com.example.department=aloprozam sandbox k9s-node-01"
     restart: unless-stopped
     networks:
       front-tier:
