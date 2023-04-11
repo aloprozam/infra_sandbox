@@ -6,7 +6,6 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-      target: sandbox
       labels:
         - "com.example.description=app1"
         - "com.example.department=aloprozam sandbox k9s-node-01"
@@ -19,7 +18,6 @@ services:
     build:
       context: ./app
       dockerfile: Dockerfile
-      target: sandbox
       labels:
         - "com.example.description=app2"
         - "com.example.department=aloprozam sandbox k9s-node-01"
