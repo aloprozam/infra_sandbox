@@ -1,10 +1,23 @@
 upstream loadbalancer {
-    server ${APP1IP}:80 weight=5 max_fails=2 fail_timeout=3s;
-    server ${APP2IP}:80 weight=5 max_fails=2 fail_timeout=3s;
+    server ${APP1IP}:8080 weight=5 max_fails=2 fail_timeout=3s;
+    server ${APP2IP}:8080 weight=5 max_fails=2 fail_timeout=3s;
 }
 
 server {
     location / {
+        proxy_buffers 16 4k;
+        proxy_buffer_size 2k;
         proxy_pass http://loadbalancer;
-            }
+    }
+    location /healthcheck {
+        proxy_buffers 16 4k;
+        proxy_buffer_size 2k;    
+        proxy_pass http://loadbalancer/healthcheck;
+    }
+
+    location /metrics {
+        proxy_buffers 16 4k;
+        proxy_buffer_size 2k;
+        proxy_pass http://loadbalancer/environment;
+    }
 }

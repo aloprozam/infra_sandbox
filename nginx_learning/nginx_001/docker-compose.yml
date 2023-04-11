@@ -3,14 +3,14 @@ version: '3'
 services:
   app1:
     container_name: app1
-    image: yeasy/simple-web:latest
+    image: python_app_aloprozam:latest
     restart: unless-stopped
     networks:
       front-tier:
         ipv4_address: ${APP1IP}
   app2:
     container_name: app2
-    image: yeasy/simple-web:latest
+    image: python_app_aloprozam:latest
     restart: unless-stopped
     networks:
       front-tier:
