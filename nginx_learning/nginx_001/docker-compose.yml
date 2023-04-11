@@ -1,0 +1,45 @@
+version: '3'
+
+services:
+  app1:
+    container_name: app1
+    image: yeasy/simple-web:latest
+    restart: unless-stopped
+    networks:
+      front-tier:
+        ipv4_address: ${APP1IP}
+  app2:
+    container_name: app2
+    image: yeasy/simple-web:latest
+    restart: unless-stopped
+    networks:
+      front-tier:
+        ipv4_address: ${APP2IP}
+  lb:
+    container_name: nginx-loadbalancer
+    image: nginx:latest
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./lb/lb_data:/etc/nginx/conf.d:rw
+      - ./lb/lb-app.template:/etc/nginx/templates/lb-app.template
+    depends_on:
+      - app1
+      - app2
+    env_file:
+      - .env
+    command: /bin/bash -c "envsubst < /etc/nginx/templates/lb-app.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    networks:
+      front-tier:
+        ipv4_address: ${LBIP}
+networks:
+  front-tier:
+    driver: bridge
+    name: front-tier
+    enable_ipv6: false
+    ipam:
+      driver: default
+      config:
+        - subnet: ${NET}
+          gateway: ${GW}

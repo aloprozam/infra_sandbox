@@ -1,0 +1,10 @@
+upstream loadbalancer {
+    server ${APP1IP}:80 weight=5 max_fails=2 fail_timeout=3s;
+    server ${APP2IP}:80 weight=5 max_fails=2 fail_timeout=3s;
+}
+
+server {
+    location / {
+        proxy_pass http://loadbalancer;
+            }
+}
