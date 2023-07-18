@@ -1,0 +1,1 @@
+os_root_disk_url = "https://cloud-images.ubuntu.com/jammy/current/jammy-server-cloudimg-amd64.img"
