@@ -1,0 +1,64 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EZ3dNekV6TURNek9Wb1hEVE16TURjek1URXpNRE16T1Zvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTWlwCjNDMTZFclNkc3lVNTlNUGdUWCtZMXRsN3JubTFrUW5yT2dtd3lCaVhzazNwSWJKeDFaMlRJSUtaQWc4bktsSCsKTzhtNUUzYXVpcmhnWTZkNTYvMkVKbWlmems1QmVoU3l1SFQwMGFPNUpoWnFSMjlScDIwUkRJbkRyVVVCaE81Kwp1OXNkbU9tREozQ24wU25nK3RMR3pEenpvanZ2eUxVSnEvWW1IVGhVRlZsUHVqMU1wN3BpWVg2aWlibWJSTzVXCkZCVnhiSmdqNERHbFJXZERIQjVIK1pEN1luVnBaZnBNbXdPNnNReHFWL3M4aXphbmx6aWFyd1BYbmxncjEvMVEKb2I1UWFTSkhHVVR1UkZiTEdJNWZZVGprdDdYd2FRNmZEUS9obnZ5RjNqaDNpUzJRbFhuVzB4SXRjZUhYWldYVwp5bnRMRnoveE90aVFwV1g4aE9FQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZMV2hUZmpkbGxiK1lGbFFqYTBsRmpCaWFJb2FNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBR0RRSS8wSWE3RUtweGV1V2I3TQpoeEZ6ZzZmMVgyem9IWjhHRDZicGllTisyM2lrUmtsMzkwK0ZWRXoyakUwcWt2MHJ3WjVGTTJsVjZJaGMyWTdICkxEb01hNEJsaDhqWG9GUG9IdTZWNWhwUWJrYUZjdWZYbVNoSFNxSU13WjFOZ1Y1MGZ4ZVpodm5oY1d0cnh4a0MKNDVBRVFRT0pYSVlVSjFMTUU2S2tuQkp2MkIvbnRwMWJBT0Vua2pDRXIycXZSdEJ1SW9RTGVjS2k5TkJSdVNQVQp3V0luR1kxMENWSU5LcEI1QTVXb1hINkhPYXNzUzFXSGZxcFFLNkhxTFVUMHkyWlJualRoSm9QTWdxek5GQWYrCjk3RC8wNlNGUmdDZFlTVytTUDNTY2w1blp3ZCtEUTVCUjZNODkxZDVyNWFTTzBUY3EyK041UmM2VC9yQ081R1kKRnNjPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://54C1754100A8442BB3F13B3E93A0D4AC.gr7.eu-central-1.eks.amazonaws.com
+  name: zirconsys-k8s-space.eu-central-1.eksctl.io
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUMvakNDQWVhZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJek1EZ3dNekV5TWpRME1Wb1hEVE16TURjek1URXlNalEwTVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTUxRCkhXcGt3WU1jNjk0VGJDT25yQlhLVzlVeFZlUmRZeGN4N3NZdnlZRHBGeWFDcjhJNkJVQnc4am5kd0RZeG5uYi8KREVRemNKcXFQZUwrVjFaRm13L1JHSjk1Y1VZSDFZbkNlY09NZTRqTVl1SG9TQUhyUW10aVhlUVpnNlZyVUY2Zgp6QWttV3BjVEw1c1hSNjAwemticTZaaFpKSU1oZnZFNVE4M012L1JJU1M2UUlSUlV0OW5hdXNvcXBncGp2M1JQCkdyY3lpVHpTME00TnZseDZUV3RvdGdSUmZpRjNFamVhUy9CRDRjc3FrMGwrbk5ESnlIYmNDd3N5dmhNSEhxcjQKVVVGUkZkM1VjMHZhWnVuc0laTk1oY0FwUXNMRm12RDlTRnVINHJMQ3pKSGJ6OWZTeE1wcWVEYVZkNHViSHllOAp2RDVOOUswSUN6L0s5SlNrL2YwQ0F3RUFBYU5aTUZjd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0hRWURWUjBPQkJZRUZKVWxzckszQzN2MGtvb0xLRnUyMUMyT3NPdHZNQlVHQTFVZEVRUU8KTUF5Q0NtdDFZbVZ5Ym1WMFpYTXdEUVlKS29aSWh2Y05BUUVMQlFBRGdnRUJBQ253eWFBSnMwMVNJSGtuSVI0VgpweGRlNGp2MWJHek12Nk9nQ0VYbGsxOGVwb0tpUHp4Z1FWQXhBSkYzdFBLb0VHZFZ6emdWQkVwM0EyRzNKb0tTCkYrOG5OMWcxWk95MVFvZ2pIKzh6WU5GVFJONXhYQW1mMnRRZUpPajRqZXNJVjR5WEwzejhkbkRVbWhIdUYxcGgKdU1EVmJkUGY1ejh6RmcrdzV0VkNYMTZiL2xoaUFkK1pZSjNoeU5wc2haamIwZWNhWVk4ZWdZZkdIWU5LWXM4ZQpPbXFqbVJJc09TaUZvUkdWU0ZuYUxid2xEaENWNnU3eFE1MkQvYlFKVjRRK0VOQ3N5cDRqWERkNFU0RnplV1l0Cmw1KytGWjk2Y200SFVYdmcvNWo4SisvUkd0TTlBT0MwV01LSTdXOEZ5Y2NaaE9YM2ZmNHNVMkVNUWJJZTNhQWwKS1lnPQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+    server: https://A95EB59633C138E152C6783E189770F6.gr7.eu-central-1.eks.amazonaws.com
+  name: zirconsys-k8s.eu-central-1.eksctl.io
+contexts:
+- context:
+    cluster: zirconsys-k8s-space.eu-central-1.eksctl.io
+    user: aloprozam@zirconsys-k8s-space.eu-central-1.eksctl.io
+  name: aloprozam@zirconsys-k8s-space.eu-central-1.eksctl.io
+- context:
+    cluster: zirconsys-k8s.eu-central-1.eksctl.io
+    user: aloprozam@zirconsys-k8s.eu-central-1.eksctl.io
+  name: aloprozam@zirconsys-k8s.eu-central-1.eksctl.io
+current-context: aloprozam@zirconsys-k8s-space.eu-central-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: aloprozam@zirconsys-k8s-space.eu-central-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - eks
+      - get-token
+      - --output
+      - json
+      - --cluster-name
+      - zirconsys-k8s-space
+      - --region
+      - eu-central-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      - name: AWS_PROFILE
+        value: zirconsys
+      provideClusterInfo: false
+- name: aloprozam@zirconsys-k8s.eu-central-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1beta1
+      args:
+      - eks
+      - get-token
+      - --output
+      - json
+      - --cluster-name
+      - zirconsys-k8s
+      - --region
+      - eu-central-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
+      - name: AWS_PROFILE
+        value: zirconsys
+      interactiveMode: IfAvailable
+      provideClusterInfo: false

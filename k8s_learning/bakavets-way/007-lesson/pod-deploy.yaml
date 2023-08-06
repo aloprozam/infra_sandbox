@@ -1,0 +1,46 @@
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "http-server"
+  namespace: default
+  labels:
+    app: "http-server"
+spec:
+  containers:
+  - name: "http-server"
+    image: "bakavets/kuber:v3.0"
+    resources:
+      limits:
+        cpu: 200m
+        memory: 256Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    ports:
+    - containerPort: 8000
+      name: http
+    volumeMounts:
+    - name: minikube-k8s-cache
+      mountPath: /cache
+  volumes:
+      - name: minikube-k8s-cache
+        persistentVolumeClaim:
+          claimName: pvc-zirconsys-k8s
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-server-svc
+spec:
+  selector:
+    app: http-server
+  type: NodePort
+  ports:
+  - name: http-server-svc
+    protocol: TCP
+    port: 80
+    targetPort: 8000
+    nodePort: 30080
+

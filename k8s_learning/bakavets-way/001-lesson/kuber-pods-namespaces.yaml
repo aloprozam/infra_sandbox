@@ -1,0 +1,72 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-kuber-zirconsys-dev-1
+  namespace: dev
+  labels:
+    app: http-server
+spec:
+  containers:
+  - name: app-kuber-zirconsys-avx1
+    image: bokovets/kuber:0.1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-kuber-zirconsys-dev-2
+  namespace: dev
+  labels:
+    app: http-server
+spec:
+  containers:
+  - name: app-kuber-zirconsys-avx2
+    image: bokovets/kuber:0.1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-kuber-zirconsys-qa-1
+  namespace: qa
+  labels:
+    app: http-server
+spec:
+  containers:
+  - name: app-kuber-zirconsys-qa1
+    image: bokovets/kuber:0.1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-kuber-zirconsys-qa-2
+  namespace: qa
+  labels:
+    app: http-server
+spec:
+  containers:
+  - name: app-kuber-zirconsys-qa2
+    image: bokovets/kuber:0.1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+      

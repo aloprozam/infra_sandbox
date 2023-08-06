@@ -1,0 +1,10 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: kube-app-external
+spec:
+  selector:
+    app: http-server
+  type: ExternalName
+  externalName: example.com

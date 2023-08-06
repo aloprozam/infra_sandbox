@@ -1,0 +1,14 @@
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: kuber-service
+spec:
+  selector:
+    app: http-server
+  type: NodePort
+  ports:
+  - name: kuber-http-server
+    protocol: TCP
+    port: 80
+    targetPort: 8000

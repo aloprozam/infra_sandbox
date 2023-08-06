@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-kuber-zirconsys-avx
+  labels:
+    environment: zirconsys
+    app: http-server
+spec:
+  nodeSelector:
+    avx: "true"
+  containers:
+  - name: app-kuber-zirconsys-avx
+    image: bokovets/kuber:0.1
+    resources:
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+    ports:
+      - containerPort: 8080
+      

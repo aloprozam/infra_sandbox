@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber
+  labels:
+    app: kuber
+spec:
+  selector:
+    matchLabels:
+      app: http-server
+  replicas: 3
+  minReadySeconds: 5
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: http-server
+    spec:
+      containers:
+      - name: kuber-app
+        image: bokovets/kuber
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber-v3
+  labels:
+    app: kuber-v3
+spec:
+  selector:
+    matchLabels:
+      app: http-server-v3
+  replicas: 2
+  minReadySeconds: 5
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: http-server-v3
+    spec:
+      containers:
+      - name: kuber-app
+        image: bakavets/kuber:v3.0
+        imagePullPolicy: IfNotPresent
+        ports:
+          - containerPort: 8000

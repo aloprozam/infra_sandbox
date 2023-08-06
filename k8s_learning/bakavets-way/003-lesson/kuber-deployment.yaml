@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuber
+  labels:
+    app: kuber
+spec:
+  selector:
+    matchLabels:
+      app: http-server
+  replicas: 5
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: http-server
+    spec:
+      containers:
+      - name: kuber-app
+        image: bokovets/kuber
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+          limits:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+          - containerPort: 8000

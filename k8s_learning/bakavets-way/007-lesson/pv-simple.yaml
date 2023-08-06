@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-zirconsys-k8s
+  labels:
+    type: minikube-pv-k8s
+spec:
+  capacity:
+    storage: 3Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+  volumeMode: Filesystem
+  hostPath:
+    path: /tmp/hostpath-provisioner/pv-zirconsys-k8s
+    type: ""

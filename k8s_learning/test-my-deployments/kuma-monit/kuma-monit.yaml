@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kuma-monit-deploy
+  labels:
+    app: kuma-uptime-monit
+spec:
+  selector:
+    matchLabels:
+      app: kuma-monit
+  replicas: 1
+  minReadySeconds: 10
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: kuma-monit
+    spec:
+      containers:
+      - name: kuma-app
+        image: louislam/uptime-kuma
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 500m
+            memory: 256Mi
+          limits:
+            cpu: 700m
+            memory: 512Mi
+        ports:
+          - containerPort: 3001
+---
+# https://kubernetes.io/docs/concepts/services-networking/service/
+apiVersion: v1
+kind: Service
+metadata:
+  name: kuma-monit-service
+spec:
+  selector:
+    app: kuma-monit
+  type: NodePort
+  ports:
+  - name: kuber-http-server
+    protocol: TCP
+    port: 3001
+    targetPort: 3001
+
